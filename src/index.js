@@ -1,6 +1,7 @@
 import * as ReactDOMClient from 'react-dom/client';
 import App from './App'
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client'
+import './index.css'
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
