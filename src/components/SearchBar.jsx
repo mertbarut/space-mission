@@ -8,12 +8,12 @@ export default function SearchBar({keyword, setter}) {
 	}
 
   return (
-    <div class="p-2">
-      <div class="flex justify-center">
-        <div class="mb-3 xl:w-96">
+    <div className="p-2">
+      <div className="flex justify-center">
+        <div className="mb-3 xl:w-96">
           <input
             type="search"
-            class="
+            className="
               form-control
               block
               w-full
