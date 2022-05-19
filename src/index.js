@@ -1,4 +1,4 @@
-import * as ReactDOMClient from 'react-dom/client';
+import * as ReactDOMClient from 'react-dom/client'
 import App from './App'
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client'
 import './index.css'
@@ -10,12 +10,12 @@ const client = new ApolloClient({
   })
 })
 
-const container = document.getElementById('root');
+const container = document.getElementById('root')
 
-const root = ReactDOMClient.createRoot(container);
+const root = ReactDOMClient.createRoot(container)
 
 root.render(
   <ApolloProvider client={client}>
     <App />
   </ApolloProvider>
-  )
+)
