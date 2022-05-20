@@ -19,7 +19,7 @@ export default function NavBar() {
           <span
             className="font-semibold text-xl text-slate-300 tracking-tight"
           >
-            Spaceship Database App
+            Harbey Spaceships
           </span>
         </div>
       </nav>

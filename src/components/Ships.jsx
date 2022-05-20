@@ -3,7 +3,6 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import Ship from './Ship'
 import Card from './Card'
 
-// a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list)
   const [removed] = result.splice(startIndex, 1)
@@ -15,15 +14,12 @@ const reorder = (list, startIndex, endIndex) => {
 const grid = 10
 
 const getItemStyle = (isDragging, draggableStyle) => ({
-  // some basic styles to make the items look a bit nicer
   userSelect: 'none',
   padding: grid * 2,
   margin: `0 0 ${grid}px 0`,
 
-  // change background colour if dragging
   background: isDragging ? 'lightyellow' : 'snow',
 
-  // styles we need to apply on draggables
   ...draggableStyle
 })
 
@@ -62,8 +58,6 @@ const Ships = ({ result, shipToDisplay, setShipToDisplay, keyword, favoriteShips
   }
 
   if (shipToDisplay && result.data) {
-    //console.log(shipToDisplay)
-    //console.log(result.data.ships.filter(s => s.name === shipToDisplay)[0])
     return (
       <Ship
         ship={result.data.ships.filter(s => s.name === shipToDisplay)[0]}
@@ -82,14 +76,10 @@ const Ships = ({ result, shipToDisplay, setShipToDisplay, keyword, favoriteShips
     )
   ))
 
-  //console.log(ships)
-
   const handleChangeFavoriteShips = (event) => {
     event.preventDefault()
-
     const clickedShip = event.target.name
 
-    //console.log(clickedShip)
     if (favoriteShips.includes(clickedShip)) {
       if (favoriteShips.length !== 1) {
         setFavoriteShips(favoriteShips.filter(ship => ship !== clickedShip && ship !== 'Your favorites will show up here'))
@@ -110,7 +100,6 @@ const Ships = ({ result, shipToDisplay, setShipToDisplay, keyword, favoriteShips
       this.onDragEnd = this.onDragEnd.bind(this)
     }
     onDragEnd(result) {
-      // dropped outside the list
       if (!result.destination) {
         return
       }
@@ -167,7 +156,6 @@ const Ships = ({ result, shipToDisplay, setShipToDisplay, keyword, favoriteShips
     }
   }
 
-  console.log(ships)
   return (
     <div
       id="results"

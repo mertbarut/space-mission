@@ -9,7 +9,7 @@ describe('navbar is rendered correctly', () => {
   }),
   test('app title is correct', () => {
     const div = screen.getByTestId('navbar')
-    expect(div).toHaveTextContent('Spaceship Database App')
+    expect(div).toHaveTextContent('Harbey Spaceships')
   }),
   test('logo is rendered', () => {
     const logo = screen.getByTestId('logo')

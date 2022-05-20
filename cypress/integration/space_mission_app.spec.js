@@ -1,11 +1,11 @@
 describe('basic tests', function() {
   it('app front page can be opened', function() {
     cy.visit('http://localhost:3000')
-    cy.contains('Spaceship Database App')
+    cy.contains('Harbey Spaceships')
   })
 })
 
-describe('search', function() {
+describe('search bar', function() {
   beforeEach(function() {
     cy.visit('http://localhost:3000')
     cy.get('#results').as('results')
